@@ -76,6 +76,10 @@ jobs:
         with:
           path: artifacts
 
+      - name: Create NPM directory
+        run: mkdir -p npm
+
+
       - name: Move Binaries to Root
         run: npm run artifacts
 
