@@ -77,6 +77,13 @@ jobs:
       - name: Generate NPM platform packages
         run: npm run prepublishOnly
 
+      - name: Ensure dist dirs for downloaded binaries
+        run: |
+          for f in artifacts/bindings-*/*.node; do
+            target="$(basename "$f" | sed -E 's/^.*\.([^.]+)\.node$/\1/')"
+            mkdir -p "npm/${target}/dist"
+          done
+
       - name: Move Binaries to Root
         run: npm run artifacts
 
