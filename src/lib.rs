@@ -3,7 +3,8 @@
 use std::sync::Arc;
 
 use napi::threadsafe_function::{ErrorStrategy, ThreadsafeFunction, ThreadsafeFunctionCallMode};
-use napi::bindgen_prelude::{Buffer, Either, JsObject};
+use napi::bindgen_prelude::{Buffer, Either};
+use napi::JsObject;
 use napi_derive::napi;
 use rocksdb::{BlockBasedOptions, Cache, DBCompressionType, Options, WriteOptions, DB};
 
