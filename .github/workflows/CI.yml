@@ -74,9 +74,8 @@ jobs:
         with:
           path: artifacts
 
-      - name: Create NPM directory
-        run: mkdir -p npm
-
+      - name: Generate NPM platform packages
+        run: npm run prepublishOnly
 
       - name: Move Binaries to Root
         run: npm run artifacts
