@@ -1,0 +1,23 @@
+{
+    "name": "rocksdb-piper-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "napi": {
+        "name": "rocksdb-piper-node",
+        "triples": {
+            "defaults": true,
+            "additional": [
+                "x86_64-unknown-linux-gnu",
+                "aarch64-apple-darwin"
+            ]
+        }
+    },
+    "scripts": {
+        "build": "napi build --platform --release",
+        "artifacts": "napi artifacts",
+        "prepublishOnly": "napi prepublish -t npm"
+    },
+    "devDependencies": {
+        "@napi-rs/cli": "^2.18.0"
+    }
+}
