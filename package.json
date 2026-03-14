@@ -2,22 +2,46 @@
     "name": "rocksdb-piper-node",
     "version": "1.0.0",
     "main": "index.js",
+    "types": "index.d.ts",
     "napi": {
         "name": "rocksdb-piper-node",
         "triples": {
-            "defaults": true,
-            "additional": [
+            "defaults": false,
+            "targets": [
                 "x86_64-unknown-linux-gnu",
                 "aarch64-apple-darwin"
             ]
         }
     },
-    "scripts": {
-        "build": "napi build --platform --release",
-        "artifacts": "napi artifacts",
-        "prepublishOnly": "napi prepublish -t npm"
-    },
+    "license": "MIT",
     "devDependencies": {
         "@napi-rs/cli": "^2.18.0"
+    },
+    "engines": {
+        "node": ">= 16"
+    },
+    "scripts": {
+        "artifacts": "napi artifacts",
+        "build": "napi build --platform --release",
+        "build:debug": "napi build --platform",
+        "prepublishOnly": "napi prepublish -t npm",
+        "version": "napi version"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git"
+    },
+    "optionalDependencies": {
+        "rocksdb-piper-node-win32-x64-msvc": "1.0.0",
+        "rocksdb-piper-node-darwin-x64": "1.0.0",
+        "rocksdb-piper-node-darwin-arm64": "1.0.0",
+        "rocksdb-piper-node-freebsd-x64": "1.0.0",
+        "rocksdb-piper-node-linux-x64-gnu": "1.0.0",
+        "rocksdb-piper-node-linux-x64-musl": "1.0.0",
+        "rocksdb-piper-node-linux-arm64-gnu": "1.0.0",
+        "rocksdb-piper-node-linux-arm64-musl": "1.0.0",
+        "rocksdb-piper-node-linux-arm-gnueabihf": "1.0.0",
+        "rocksdb-piper-node-android-arm64": "1.0.0",
+        "rocksdb-piper-node-android-armv7": "1.0.0"
     }
 }
