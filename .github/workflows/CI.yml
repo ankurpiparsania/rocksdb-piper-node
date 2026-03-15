@@ -77,12 +77,7 @@ jobs:
         with:
           path: artifacts
 
-      - name: Create dist directory
-        run: |
-          for dir in artifacts/bindings-*/; do
-            mkdir -p "$dir/dist"
-            cp index.js index.d.ts "$dir/dist/"
-          done
+
 
       - name: Move Binaries to Root
         run: npm run artifacts
