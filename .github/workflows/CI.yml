@@ -71,20 +71,20 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
-         run: npm install
+        run: npm install
 
-       - name: Download all Cross-Compiled Binaries
-         uses: actions/download-artifact@v4
-         with:
-           path: artifacts
+      - name: Download all Cross-Compiled Binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
 
-       - name: Move Binaries to Root
-         run: npm run artifacts
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Move Binaries to Root
+        run: npm run artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-       - name: Generate NPM package layout
-         run: npm run prepublishOnly
+      - name: Generate NPM package layout
+        run: npm run prepublishOnly
 
       - name: Publish to NPM
         run: npm publish --access public
