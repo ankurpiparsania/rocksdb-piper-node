@@ -5,6 +5,9 @@
     "types": "index.d.ts",
     "napi": {
         "name": "rocksdb-piper-node",
+        "package": {
+            "name": "@alpha-piper/rocksdb-piper-node"
+        },
         "triples": {
             "defaults": false,
             "additional": [

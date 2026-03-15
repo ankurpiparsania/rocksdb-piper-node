@@ -85,6 +85,8 @@ jobs:
 
       - name: Generate NPM package layout
         run: npm run prepublishOnly
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to NPM
         run: npm publish --access public

@@ -1,5 +1,5 @@
 {
-  "name": "rocksdb-piper-node-linux-x64-gnu",
+  "name": "@alpha-piper/rocksdb-piper-node-linux-x64-gnu",
   "version": "1.0.0",
   "os": [
     "linux"
@@ -14,5 +14,8 @@
   "files": [
     "rocksdb-piper-node.linux-x64-gnu.node"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }

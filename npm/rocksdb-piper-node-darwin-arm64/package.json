@@ -1,5 +1,5 @@
 {
-  "name": "rocksdb-piper-node-darwin-arm64",
+  "name": "@alpha-piper/rocksdb-piper-node-darwin-arm64",
   "version": "1.0.0",
   "os": [
     "darwin"
@@ -11,5 +11,8 @@
   "files": [
     "rocksdb-piper-node.darwin-arm64.node"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }
