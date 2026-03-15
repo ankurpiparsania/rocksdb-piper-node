@@ -77,12 +77,11 @@ jobs:
         with:
           path: artifacts
 
-      - name: Debug artifact/package layout
+      - name: Create dist directory
         run: |
-          echo "=== artifacts ==="
-          find artifacts -maxdepth 4 -type f | sort || true
-          echo "=== npm dirs ==="
-          find npm -maxdepth 4 -type d | sort || true
+          mkdir -p dist
+          cp index.js dist/
+          cp index.d.ts dist/
 
       - name: Move Binaries to Root
         run: npm run artifacts
