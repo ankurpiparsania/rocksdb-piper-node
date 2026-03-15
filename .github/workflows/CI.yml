@@ -69,10 +69,20 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Generate NPM package layout
+        run: npm run prepublishOnly
+
       - name: Download all Cross-Compiled Binaries
         uses: actions/download-artifact@v4
         with:
           path: artifacts
+
+      - name: Debug artifact/package layout
+        run: |
+          echo "=== artifacts ==="
+          find artifacts -maxdepth 4 -type f | sort || true
+          echo "=== npm dirs ==="
+          find npm -maxdepth 4 -type d | sort || true
 
       - name: Move Binaries to Root
         run: npm run artifacts
